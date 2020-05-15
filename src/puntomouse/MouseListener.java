@@ -42,7 +42,7 @@ public class MouseListener extends javax.swing.JPanel {
         
         
         try{
-             cliente = new Socket("127.0.0.1",3000);//Socket para el cliente en localhost en puerto 3000
+             cliente = new Socket("127.0.0.1",5000);//Socket para el cliente en localhost en puerto 5000
             
             System.out.println("Cliente conectado..."+cliente);//Muestra conexión del cliente
             
@@ -81,6 +81,7 @@ public class MouseListener extends javax.swing.JPanel {
             }
         });
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setMaximumSize(new java.awt.Dimension(670, 480));
         jPanel1.setMinimumSize(new java.awt.Dimension(670, 480));
         jPanel1.setPreferredSize(new java.awt.Dimension(670, 480));
