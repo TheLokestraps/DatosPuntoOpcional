@@ -49,7 +49,7 @@ public class MouseListener extends javax.swing.JPanel {
             out = new DataOutputStream(cliente.getOutputStream());
             in = new BufferedReader(new InputStreamReader(System.in));
         }catch(IOException e){
-            
+            System.out.println("NOT CONNECTED");
         }
         
     }
@@ -130,7 +130,7 @@ public class MouseListener extends javax.swing.JPanel {
                         try {
                             out.writeUTF(e.getX()+" "+e.getY());
                         } catch (IOException ex) {
-                            Logger.getLogger(MouseListener.class.getName()).log(Level.SEVERE, null, ex);
+                            System.out.println("NOT CONNECTED");
                         }
                             points.add(new Point(e.getX(), e.getY()));
                             System.out.println(e.getX()+" "+e.getY());
@@ -148,7 +148,7 @@ public class MouseListener extends javax.swing.JPanel {
             cliente.close();
             System.out.println("Fin del cliente");
         } catch (IOException ex) {
-            Logger.getLogger(MouseListener.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("NOT CONNECTED");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
