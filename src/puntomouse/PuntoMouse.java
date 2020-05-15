@@ -16,6 +16,8 @@ public class PuntoMouse {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        MouseListener mos = new MouseListener();
+        mos.setVisible(true);
     }
     
 }

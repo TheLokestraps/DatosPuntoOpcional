@@ -17,11 +17,7 @@ public class Server {
     /**
      * @param args the command line arguments
      */
-//    static ServerSocket self;
-//    static Socket selve;
-//    static int puerto = 5000;
-//    static BufferedReader entrada;    
-        
+    
     
     public static void main(String[] args) {
         // TODO code application logic here
@@ -40,10 +36,14 @@ public class Server {
             entrada = new BufferedReader(new InputStreamReader(selve.getInputStream()));
             DataOutputStream salida = new DataOutputStream(selve.getOutputStream());       
             System.out.println("conexion confirmada");
+            
+            //lectura del mensaje
             String mensajeRecibido = entrada.readLine();
-            System.out.println(mensajeRecibido);
-            salida.writeUTF("Se recibio tu mensaje.");
-            salida.writeUTF("Gracias por conectarte.");
+            System.out.println("Las cordenadas son "+mensajeRecibido);
+            //salida.writeUTF("Se recibio tu mensaje.");
+            //salida.writeUTF("Gracias por conectarte.");
+            
+            //desconexion
             System.out.println("Cerrando conexión...");
             self.close();
             
