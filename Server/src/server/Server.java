@@ -22,33 +22,29 @@ public class Server {
     public static void main(String[] args) {
         // TODO code application logic here
         ServerSocket self;
-        Socket selve;
+        Socket cliente;
         int puerto = 5000;
         BufferedReader entrada;  
         
-        System.out.println("si corri");
         try{
         
             self = new ServerSocket(puerto);
             System.out.println("Esperando la conexion");
-            selve = self.accept();
+            cliente = self.accept();
             System.out.println("se detecto un cliente");
-            entrada = new BufferedReader(new InputStreamReader(selve.getInputStream()));
-            DataOutputStream salida = new DataOutputStream(selve.getOutputStream());       
+            entrada = new BufferedReader(new InputStreamReader(cliente.getInputStream()));
             System.out.println("conexion confirmada");
             
             //lectura del mensaje
             String mensajeRecibido = entrada.readLine();
             System.out.println("Las cordenadas son "+mensajeRecibido);
-            //salida.writeUTF("Se recibio tu mensaje.");
-            //salida.writeUTF("Gracias por conectarte.");
             
             //desconexion
             System.out.println("Cerrando conexión...");
             self.close();
             
         }catch(IOException e){
-            System.out.println("Errooooor");
+            System.out.println("Something gone wrong");
         
         }
         
